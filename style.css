@@ -24,10 +24,14 @@ body {
 .page-principale {
   width: 100%;
   margin: auto;
-  min-width: 270px;
-  max-width: 767px;
 }
 /* Partie Header  */
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--white);
+}
 nav {
   height: 63px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
@@ -44,6 +48,9 @@ nav {
   height: 100%;
 }
 /* Partie main  */
+main {
+  padding-top: 63px;
+}
 .localisation {
   width: 100%;
   height: 50px;
@@ -77,12 +84,11 @@ nav {
   color: var(--gray);
   font-weight: bold;
 }
-/* Partie Exploration  */
+/* Bloc Exploration  */
 .exploration {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   margin: auto;
   text-align: center;
 }
@@ -116,7 +122,7 @@ nav {
   font-weight: bold;
   text-decoration: none;
 }
-/* Partie fonctionnement */
+/* Bloc fonctionnement */
 .fonctionnement {
   display: flex;
   flex-direction: column;
@@ -124,7 +130,6 @@ nav {
   align-items: center;
   height: 380px;
   background-color: var(--white);
-  padding: 2% 5% 15% 5%;
 }
 .titre-fonctionnment {
   width: 219px;
@@ -135,7 +140,7 @@ nav {
 }
 .fonctionnement a {
   background-color: var(--background);
-  width: 219px;
+  max-width: 322px;
   height: 62.38px;
   padding-right: 20px;
   border-radius: 20px;
@@ -165,21 +170,29 @@ nav {
   justify-content: center;
   margin-left: -15px;
 }
-/* Partie restaurants */
+/* Bloc restaurants */
 .restaurants {
-  height: 900px;
+  height: 1000px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2% 5% 15% 5%;
+  background-color: var(--background);
 }
 .titre-restaurants {
   width: 219px;
-  margin-left: -25px;
+  margin-left: -35px;
 }
-/* gestion des cartes restaurant */
+/* Gestion des cartes restaurants */
+.cartes-restaurants {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .cartes-restaurants article {
-  width: 219px;
+  width: 100%;
+  max-width: 340px;
   height: 196px;
   border-radius: 15px;
   overflow: hidden;
@@ -204,8 +217,8 @@ nav {
   height: 19px;
   width: 75px;
   position: relative;
-  bottom: 130px;
-  left: 130px;
+  bottom: 70%;
+  left: 68.5%;
   font-size: 13px;
   padding-top: 3px;
 }
@@ -273,10 +286,18 @@ footer a {
   flex-direction: column;
   margin-left: 20px;
 }
+.mentions a {
+  margin-top: 5px;
+}
+.mentions i {
+  font-size: 11.92px;
+  height: 13px;
+  width: 15px;
+}
+.mentions span {
+  margin-left: 10px;
+}
 .mentions p {
   margin-block-start: 0;
   margin-block-end: 0;
-}
-.mentions a {
-  margin-top: 5px;
 }
