@@ -1,0 +1,282 @@
+:root {
+  /* gestions des couleurs  */
+  --background: #f7f7f7; /* var(--background) */
+  --secondary: #fca311; /* var(--secondary) */
+  --primary: #9356dc; /* var(--primary) */
+  --green: #99e2d0; /* var(--green) */
+  --green-font: #008766; /* var(--green-font) */
+  --new-green: #99e2d0; /* var(--new-green*/
+  --white: #ffffff; /* var(--white) */
+  --black: #101010; /* var(--black) */
+  --gray: #353535; /* var(--gray) */
+  --gray-two: #eaeaea; /* var(--gray) */
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+/* Version Mobile de 270px --> 767px */
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+}
+.page-principale {
+  width: 100%;
+  margin: auto;
+  min-width: 270px;
+  max-width: 767px;
+}
+/* Partie Header  */
+nav {
+  height: 63px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-site {
+  width: 150px;
+  height: 30px;
+}
+.logo-site img {
+  width: 100%;
+  height: 100%;
+}
+/* Partie main  */
+.localisation {
+  width: 100%;
+  height: 50px;
+}
+.localisation {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: var(--gray-two);
+}
+.localisation form {
+  display: flex;
+  width: 180px;
+  align-items: center;
+  /* padding-left: 10px; */
+  font-size: 16px;
+}
+.localisation button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 25%;
+  height: 100%;
+  color: var(--gray);
+  font-weight: bold;
+}
+.localisation input {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 60%;
+  height: 100%;
+  color: var(--gray);
+  font-weight: bold;
+}
+/* Partie Exploration  */
+.exploration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin: auto;
+  text-align: center;
+}
+.exploration {
+  background-color: var(--background);
+  height: 230px;
+}
+.texte-exploration {
+  width: 270px;
+  height: 60%;
+}
+.texte-exploration h2 {
+  width: 270px;
+  margin-block-end: 0px;
+  font-weight: bold;
+}
+.texte-exploration p {
+  width: 270px;
+  margin-block-end: 0px;
+}
+.exploration a {
+  width: 219px;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 55px;
+  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%);
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
+}
+/* Partie fonctionnement */
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 380px;
+  background-color: var(--white);
+  padding: 2% 5% 15% 5%;
+}
+.titre-fonctionnment {
+  width: 219px;
+  margin-left: -25px;
+}
+.titre-fonctionnment h2 {
+  margin-block-end: 0;
+}
+.fonctionnement a {
+  background-color: var(--background);
+  width: 219px;
+  height: 62.38px;
+  padding-right: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-around;
+  font-size: 15px;
+  color: var(--black);
+}
+.fonctionnement i {
+  margin-left: 10px;
+}
+.fonctionnement p {
+  width: 170px;
+  margin-left: 15px;
+}
+.nombre {
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -15px;
+}
+/* Partie restaurants */
+.restaurants {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 5% 15% 5%;
+}
+.titre-restaurants {
+  width: 219px;
+  margin-left: -25px;
+}
+/* gestion des cartes restaurant */
+.cartes-restaurants article {
+  width: 219px;
+  height: 196px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+.cartes-restaurants a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.cartes-restaurants a img {
+  object-fit: cover;
+  width: 100%;
+  height: 141px;
+}
+.nouveau {
+  background-color: var(--new-green);
+  text-align: center;
+  height: 19px;
+  width: 75px;
+  position: relative;
+  bottom: 130px;
+  left: 130px;
+  font-size: 13px;
+  padding-top: 3px;
+}
+.ancien {
+  visibility: hidden;
+}
+.nouveau p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.description-coeur-carte {
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+.description h4,
+.description p {
+  margin-block-start: 2px;
+  margin-block-end: 0;
+  color: black;
+}
+.description p {
+  font-size: 14px;
+}
+.coeur {
+  width: 22px;
+  height: 21px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  color: var(--primary);
+}
+.coeur:hover {
+  background-color: var(--primary);
+  overflow: hidden;
+}
+/* Partie footer */
+footer {
+  background-color: var(--gray);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 200px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+.titre-footer {
+  width: 140px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.titre-footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-size: 18px;
+}
+.mentions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.mentions p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.mentions a {
+  margin-top: 5px;
+}
