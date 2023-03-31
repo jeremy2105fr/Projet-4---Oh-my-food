@@ -191,7 +191,7 @@ main {
   align-items: center;
 }
 .cartes-restaurants article {
-  width: 100%;
+  width: 95%;
   max-width: 340px;
   height: 196px;
   border-radius: 15px;
