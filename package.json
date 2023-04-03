@@ -1,0 +1,11 @@
+{
+  "name": "projet-4---oh-my-food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main-style-restaurants.scss:./asset/css/style-restaurants.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,211 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.menu-restaurant__restaurant-titre h2,
+.titre-footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+.page-principale {
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .nav {
+  width: 80%;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 25%;
+}
+header .nav__retour-index {
+  color: #101010;
+  font-size: 24px;
+}
+header .nav__retour-index:hover {
+  color: #9356dc;
+}
+header .nav__logo-site {
+  width: 150px;
+  height: 30px;
+}
+header .nav__logo-site img {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  background-color: #f7f7f7;
+}
+main .baniere {
+  width: 100%;
+  height: 330px;
+}
+main .baniere img {
+  width: 100%;
+  height: 100%;
+}
+main .menu-restaurant {
+  padding: 30px 2% 0 2%;
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  z-index: 1;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+main .menu-restaurant__restaurant-titre {
+  width: 349px;
+  display: flex;
+  justify-content: space-between;
+}
+main .menu-restaurant__restaurant-titre h2 {
+  font-size: 1.35em;
+}
+main .menu-restaurant__restaurant-titre--coeur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+main .menu-restaurant section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .menu-restaurant section .titre-section {
+  width: 349px;
+  padding-bottom: 0;
+}
+main .menu-restaurant section .titre-section h3 {
+  width: 13%;
+  border-bottom: 3px #99e2d0 solid;
+  margin-block-end: 10px;
+}
+main .menu-restaurant section .carte-menu {
+  width: 349px;
+  height: 70px;
+  margin-top: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+main .menu-restaurant section .carte-menu .titre-menu {
+  overflow-x: hidden;
+}
+main .menu-restaurant section .carte-menu .titre-menu h4,
+main .menu-restaurant section .carte-menu .titre-menu p {
+  margin-block-start: 3px;
+  margin-block-end: 3px;
+  width: 300px;
+}
+main .menu-restaurant section .carte-menu .titre-menu h4 {
+  font-size: 15px;
+}
+main .menu-restaurant section .carte-menu .titre-menu p {
+  font-size: 12px;
+}
+main .menu-restaurant section .carte-menu .prix-check {
+  display: flex;
+  height: 100%;
+  position: relative;
+  left: 50px;
+}
+main .menu-restaurant section .carte-menu .prix-check h5 {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+main .menu-restaurant section .carte-menu .prix-check .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  color: #ffffff;
+  width: 50px;
+  border-radius: 0 15px 15px 0;
+}
+main .menu-restaurant .btn {
+  width: 186px;
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #FF79DA 123.93%);
+}
+
+footer {
+  background-color: #353535;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 200px;
+}
+footer .mentions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+footer .mentions .titre-footer {
+  width: 140px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+footer .mentions .titre-footer h3 {
+  font-size: 18px;
+}
+footer .mentions a {
+  color: white;
+  text-decoration: none;
+  margin-top: 5px;
+}
+footer .mentions i {
+  font-size: 11.92px;
+  height: 13px;
+  width: 15px;
+}
+footer .mentions span {
+  margin-left: 10px;
+}
+footer .mentions p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/*# sourceMappingURL=style-restaurants.css.map */
