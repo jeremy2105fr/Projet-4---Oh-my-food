@@ -2,12 +2,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-.menu-restaurant__restaurant-titre h2,
-.titre-footer h3 {
-  font-family: "Shrikhand", cursive;
-  font-weight: normal;
-}
-
 html {
   overflow-x: hidden;
 }
@@ -21,7 +15,13 @@ body {
   margin: auto;
 }
 
-header {
+.menu-restaurant__restaurant-titre h2,
+.titre-footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+}
+
+.header-restaurant {
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -31,7 +31,7 @@ header {
   align-items: center;
   justify-content: center;
 }
-header .nav {
+.header-restaurant .nav {
   width: 80%;
   height: 63px;
   display: flex;
@@ -40,34 +40,34 @@ header .nav {
   padding-left: 5%;
   padding-right: 25%;
 }
-header .nav__retour-index {
+.header-restaurant .nav__retour-index {
   color: #101010;
   font-size: 24px;
 }
-header .nav__retour-index:hover {
+.header-restaurant .nav__retour-index:hover {
   color: #9356dc;
 }
-header .nav__logo-site {
+.header-restaurant .nav__logo-site {
   width: 150px;
   height: 30px;
 }
-header .nav__logo-site img {
+.header-restaurant .nav__logo-site img {
   width: 100%;
   height: 100%;
 }
 
-main {
+.main-restaurant {
   background-color: #f7f7f7;
 }
-main .baniere {
+.main-restaurant .baniere {
   width: 100%;
   height: 330px;
 }
-main .baniere img {
+.main-restaurant .baniere img {
   width: 100%;
   height: 100%;
 }
-main .menu-restaurant {
+.main-restaurant .menu-restaurant {
   padding: 30px 2% 0 2%;
   border-radius: 40px 40px 0 0;
   position: relative;
@@ -79,36 +79,36 @@ main .menu-restaurant {
   flex-direction: column;
   background-color: #f7f7f7;
 }
-main .menu-restaurant__restaurant-titre {
+.main-restaurant .menu-restaurant__restaurant-titre {
   width: 349px;
   display: flex;
   justify-content: space-between;
 }
-main .menu-restaurant__restaurant-titre h2 {
+.main-restaurant .menu-restaurant__restaurant-titre h2 {
   font-size: 1.35em;
 }
-main .menu-restaurant__restaurant-titre--coeur {
+.main-restaurant .menu-restaurant__restaurant-titre--coeur {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
 }
-main .menu-restaurant section {
+.main-restaurant .menu-restaurant section {
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .menu-restaurant section .titre-section {
+.main-restaurant .menu-restaurant section .titre-section {
   width: 349px;
   padding-bottom: 0;
 }
-main .menu-restaurant section .titre-section h3 {
+.main-restaurant .menu-restaurant section .titre-section h3 {
   width: 13%;
   border-bottom: 3px #99e2d0 solid;
   margin-block-end: 10px;
 }
-main .menu-restaurant section .carte-menu {
+.main-restaurant .menu-restaurant section .carte-menu {
   width: 349px;
   height: 70px;
   margin-top: 15px;
@@ -120,34 +120,34 @@ main .menu-restaurant section .carte-menu {
   border-radius: 15px;
   overflow: hidden;
 }
-main .menu-restaurant section .carte-menu .titre-menu {
+.main-restaurant .menu-restaurant section .carte-menu .titre-menu {
   overflow-x: hidden;
 }
-main .menu-restaurant section .carte-menu .titre-menu h4,
-main .menu-restaurant section .carte-menu .titre-menu p {
+.main-restaurant .menu-restaurant section .carte-menu .titre-menu h4,
+.main-restaurant .menu-restaurant section .carte-menu .titre-menu p {
   margin-block-start: 3px;
   margin-block-end: 3px;
   width: 300px;
 }
-main .menu-restaurant section .carte-menu .titre-menu h4 {
+.main-restaurant .menu-restaurant section .carte-menu .titre-menu h4 {
   font-size: 15px;
 }
-main .menu-restaurant section .carte-menu .titre-menu p {
+.main-restaurant .menu-restaurant section .carte-menu .titre-menu p {
   font-size: 12px;
 }
-main .menu-restaurant section .carte-menu .prix-check {
+.main-restaurant .menu-restaurant section .carte-menu .prix-check {
   display: flex;
   height: 100%;
   position: relative;
   left: 50px;
 }
-main .menu-restaurant section .carte-menu .prix-check h5 {
+.main-restaurant .menu-restaurant section .carte-menu .prix-check h5 {
   display: flex;
   align-items: flex-end;
   margin-right: 10px;
   margin-bottom: 15px;
 }
-main .menu-restaurant section .carte-menu .prix-check .check {
+.main-restaurant .menu-restaurant section .carte-menu .prix-check .check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +156,7 @@ main .menu-restaurant section .carte-menu .prix-check .check {
   width: 50px;
   border-radius: 0 15px 15px 0;
 }
-main .menu-restaurant .btn {
+.main-restaurant .menu-restaurant .btn {
   width: 186px;
   height: 50px;
   margin-top: 50px;

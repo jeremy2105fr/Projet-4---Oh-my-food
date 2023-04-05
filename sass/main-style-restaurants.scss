@@ -33,11 +33,6 @@ $gray-two: #eaeaea;
     font-family: "Roboto", sans-serif;
 }
 
-.menu-restaurant__restaurant-titre h2,
-.titre-footer h3 {
-    font-family: "Shrikhand", cursive;
-    font-weight: normal;
-}
 
 html {
     overflow-x: hidden;
@@ -52,8 +47,15 @@ body {
     margin: auto;
 }
 
+// ----------Partie pages des Restaurants-------
+.menu-restaurant__restaurant-titre h2,
+.titre-footer h3 {
+    font-family: "Shrikhand", cursive;
+    font-weight: normal;
+}
+
 // Partie Header 
-header {
+.header-restaurant {
     position: fixed;
     z-index: 2;
     width: 100%;
@@ -92,7 +94,7 @@ header {
 }
 
 // Partie Main 
-main {
+.main-restaurant {
     background-color: $background;
 
     // Gestion de la baniere 
