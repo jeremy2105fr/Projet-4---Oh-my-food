@@ -4,6 +4,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -87,7 +88,7 @@ body {
   padding-bottom: 15px;
 }
 .main-index .localisation-exploration .exploration .texte-exploration {
-  width: 270px;
+  width: 90%;
   height: 60%;
 }
 .main-index .localisation-exploration .exploration .texte-exploration h2 {
@@ -97,6 +98,14 @@ body {
 .main-index .localisation-exploration .exploration .texte-exploration p {
   margin-block-end: 0px;
 }
+@media screen and (min-width: 768px) {
+  .main-index .localisation-exploration .exploration .texte-exploration {
+    width: 100%;
+  }
+  .main-index .localisation-exploration .exploration .texte-exploration h2 {
+    font-size: 37px;
+  }
+}
 .main-index .localisation-exploration .exploration a {
   width: 219px;
   height: 50px;
@@ -105,10 +114,23 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 55px;
-  background: linear-gradient(200.64deg, #9356dc -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(#FF79DA, #9356dc);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
+}
+.main-index .localisation-exploration .exploration a:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15)), linear-gradient(#FF79DA, #9356dc);
+  transform: matrix();
+}
+.main-index .localisation-exploration .exploration a:hover span {
+  transform: matrix(1, 0, 0, 1, -1.7, 0.9);
+}
+.main-index .localisation-exploration .exploration a:hover span:hover {
+  transition-delay: 400ms;
+  transform: none;
 }
 .main-index .fonctionnement {
   display: flex;
@@ -125,9 +147,15 @@ body {
 .main-index .fonctionnement .titre-fonctionnement h2 {
   margin-block-end: 0;
 }
-.main-index .fonctionnement a {
+.main-index .fonctionnement .boites-fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 280px;
+}
+.main-index .fonctionnement .boites-fonctionnement a {
   background-color: #f7f7f7;
-  max-width: 322px;
+  width: 90%;
   height: 62.38px;
   padding-right: 20px;
   border-radius: 20px;
@@ -139,27 +167,90 @@ body {
   font-size: 15px;
   color: #101010;
 }
-.main-index .fonctionnement a i {
+.main-index .fonctionnement .boites-fonctionnement a:hover i {
+  color: #9356dc;
+}
+.main-index .fonctionnement .boites-fonctionnement a i {
   margin-left: 10px;
 }
-.main-index .fonctionnement a p {
-  width: 170px;
+.main-index .fonctionnement .boites-fonctionnement a p {
+  width: 100%;
   margin-left: 15px;
+  font-weight: bold;
 }
-.main-index .fonctionnement a .nombre {
+.main-index .fonctionnement .boites-fonctionnement a .nombre {
   background-color: #9356dc;
   color: #ffffff;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: -15px;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-index .fonctionnement {
+    height: 150px;
+  }
+  .main-index .fonctionnement .titre-fonctionnement {
+    width: 80%;
+    margin-left: 0px;
+  }
+  .main-index .fonctionnement .boites-fonctionnement {
+    width: 80%;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a {
+    width: 25%;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a p {
+    margin-left: 8px;
+    text-align: center;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a .nombre {
+    margin-left: -14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-index .fonctionnement {
+    height: 150px;
+  }
+  .main-index .fonctionnement .titre-fonctionnement {
+    width: 80%;
+    width: 953px;
+    margin-left: 0px;
+  }
+  .main-index .fonctionnement .boites-fonctionnement {
+    width: 80%;
+    width: 953px;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a {
+    width: 28%;
+    max-width: 258px;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a p {
+    margin-right: 30px;
+    text-align: center;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a i {
+    margin-left: 20px;
+  }
+  .main-index .fonctionnement .boites-fonctionnement a .nombre {
+    margin-left: -14px;
+  }
+}
 .main-index .restaurants {
   height: 1000px;
   margin-top: 50px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,6 +259,9 @@ body {
 .main-index .restaurants .titre-restaurants {
   width: 219px;
   margin-left: -35px;
+}
+.main-index .restaurants .titre-restaurants h2 {
+  margin-block-end: 0em;
 }
 .main-index .restaurants .cartes-restaurants {
   width: 100%;
@@ -211,6 +305,8 @@ body {
 .main-index .restaurants .cartes-restaurants article a .nouveau p {
   margin-block-start: 0;
   margin-block-end: 0;
+  color: #008766;
+  font-weight: bold;
 }
 .main-index .restaurants .cartes-restaurants article a .ancien {
   visibility: hidden;
@@ -233,17 +329,66 @@ body {
 .main-index .restaurants .cartes-restaurants article a .description-coeur-carte .description p {
   font-size: 14px;
 }
-.main-index .restaurants .cartes-restaurants article a .description-coeur-carte .coeur {
+.main-index .restaurants .cartes-restaurants article a .description-coeur-carte .fa {
   width: 22px;
   height: 21px;
   text-align: center;
   font-size: 20px;
   margin-top: 10px;
+  color: #f7f7f7;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #9356dc;
+}
+.main-index .restaurants .cartes-restaurants article a .description-coeur-carte .fa:active {
   color: #9356dc;
 }
-.main-index .restaurants .cartes-restaurants article a .description-coeur-carte .coeur:hover {
-  background-color: #9356dc;
-  overflow: hidden;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-index .restaurants {
+    height: 620px;
+  }
+  .main-index .restaurants .titre-restaurants {
+    width: 85.5%;
+  }
+  .main-index .restaurants .cartes-restaurants {
+    width: 90%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 30px;
+  }
+  .main-index .restaurants .cartes-restaurants article {
+    width: 95%;
+    max-width: none;
+  }
+  .main-index .restaurants .cartes-restaurants article a .nouveau {
+    left: 78.5%;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .main-index .restaurants {
+    height: 550px;
+  }
+  .main-index .restaurants .titre-restaurants {
+    width: 910px;
+  }
+  .main-index .restaurants .cartes-restaurants {
+    width: 90%;
+    max-width: 953px;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 30px;
+  }
+  .main-index .restaurants .cartes-restaurants article {
+    width: 95%;
+    max-width: none;
+  }
+  .main-index .restaurants .cartes-restaurants article a .nouveau {
+    left: 79%;
+    bottom: 68%;
+  }
 }
 
 .menu-restaurant__restaurant-titre h2,
@@ -397,7 +542,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(#FF79DA, #9356dc);
 }
 
 footer {
@@ -421,22 +566,51 @@ footer .mentions .titre-footer {
 footer .mentions .titre-footer h3 {
   font-size: 18px;
 }
-footer .mentions a {
+footer .mentions .liens-footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .mentions .liens-footer a {
   color: white;
   text-decoration: none;
   margin-top: 5px;
 }
-footer .mentions i {
+footer .mentions .liens-footer a p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+footer .mentions .liens-footer a i {
   font-size: 11.92px;
   height: 13px;
   width: 15px;
 }
-footer .mentions span {
+footer .mentions .liens-footer a span {
   margin-left: 10px;
 }
-footer .mentions p {
-  margin-block-start: 0;
-  margin-block-end: 0;
+@media screen and (min-width: 768px) {
+  footer {
+    height: 100px;
+  }
+  footer .mentions {
+    flex-direction: row-reverse;
+    align-items: self-end;
+    margin-top: 25px;
+    margin-right: 30px;
+  }
+  footer .mentions h3 {
+    margin-block-start: 19%;
+    margin-block-end: 0;
+    text-align: end;
+  }
+  footer .mentions .liens-footer {
+    flex-direction: row;
+    align-items: self-end;
+    justify-content: space-around;
+    height: 100%;
+  }
+  footer .mentions .liens-footer a {
+    margin-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=style-restaurants.css.map */

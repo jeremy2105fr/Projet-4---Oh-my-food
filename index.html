@@ -49,9 +49,9 @@
                 <div class="exploration">
                     <div class="texte-exploration">
                         <h2>Réservez le menu qui vous convient</h2>
-                        <p>Découvrez des restaurants d'éxcetion, sélectionnés par nos soins.</p>
+                        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
                     </div>
-                    <a href="#">Explorer nos restaurants</a>
+                    <a href="#restaurants"><span>Explorer nos restaurants</span></a>
                 </div>
             </section>
             <!-- La section fonctionnement contient 1 titre et 3 liens  -->
@@ -59,32 +59,35 @@
                 <div class="titre-fonctionnement">
                     <h2>Fonctionnement</h2>
                 </div>
-                <!-- <a> est une carte avec 
+                <!-- cartes-fonctionnement contient 3 boites -->
+                <div class="boites-fonctionnement">
+                    <!-- <a> est une carte avec 
                     1 div.nombre + 1 <i> + 1 <p> -->
-                <a href="#">
-                    <div class="nombre">
-                        <span>1</span>
-                    </div>
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <p class="texte-fonctionnement">Choississez un restaurant</p>
-                </a>
-                <a href="#">
-                    <div class="nombre">
-                        <span>2</span>
-                    </div>
-                    <i class="fa-solid fa-list-ul"></i>
-                    <p class="texte-fonctionnement">Composez votre menu</p>
-                </a>
-                <a href="#">
-                    <div class="nombre">
-                        <span>3</span>
-                    </div>
-                    <i class="fa-solid fa-store"></i>
-                    <p class="texte-fonctionnement">Dégustez au restaurant</p>
-                </a>
+                    <a href="#">
+                        <div class="nombre">
+                            <span>1</span>
+                        </div>
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <p class="texte-fonctionnement">Choississez un restaurant</p>
+                    </a>
+                    <a href="#">
+                        <div class="nombre">
+                            <span>2</span>
+                        </div>
+                        <i class="fa-solid fa-list-ul"></i>
+                        <p class="texte-fonctionnement">Composez votre menu</p>
+                    </a>
+                    <a href="#">
+                        <div class="nombre">
+                            <span>3</span>
+                        </div>
+                        <i class="fa-solid fa-store"></i>
+                        <p class="texte-fonctionnement">Dégustez au restaurant</p>
+                    </a>
+                </div>
             </section>
             <!-- La section restaurants contient 1 titre et 4 liens qui mènent à d'autres pages en carte  -->
-            <section class="restaurants">
+            <section id="restaurants" class="restaurants">
                 <div class="titre-restaurants">
                     <h2>Restaurants</h2>
                 </div>
@@ -101,7 +104,7 @@
                                     <h4>La palette du goût</h4>
                                     <p>Ménilmontant</p>
                                 </div>
-                                <i class=" coeur fa-regular fa-heart"></i>
+                                <i class="fa fa-heart"></i>
                             </div>
                         </a>
                     </article>
@@ -117,7 +120,7 @@
                                     <h4>La note enchantée</h4>
                                     <p>Charonne</p>
                                 </div>
-                                <i class="coeur fa-regular fa-heart"></i>
+                                <i class="fa fa-heart"></i>
                             </div>
                         </a>
                     </article>
@@ -133,7 +136,7 @@
                                     <h4>À la française</h4>
                                     <p>Cité Rouge</p>
                                 </div>
-                                <i class="coeur fa-regular fa-heart"></i>
+                                <i class="fa fa-heart"></i>
                             </div>
                         </a>
                     </article>
@@ -149,7 +152,7 @@
                                     <h4>Le délice des sens</h4>
                                     <p>Folie-Méricourt</p>
                                 </div>
-                                <i class="coeur fa-regular fa-heart"></i>
+                                <i class="fa fa-heart"></i>
                             </div>
                         </a>
                     </article>
@@ -162,14 +165,16 @@
                 <div class="titre-footer">
                     <h3>ohmyfood</h3>
                 </div>
-                <a href="#" class="logo-footer">
-                    <p><i class="fa-solid fa-utensils"></i><span>Proposer un restaurant</span> </p>
-                </a>
-                <a href="#" class="logo-footer">
-                    <p><i class="fa-solid fa-handshake-angle"></i><span>Devenir partenaire</span></p>
-                </a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Contact</a>
+                <div class="liens-footer">
+                    <a href="#" class="logo-footer">
+                        <p><i class="fa-solid fa-utensils"></i><span>Proposer un restaurant</span> </p>
+                    </a>
+                    <a href="#" class="logo-footer">
+                        <p><i class="fa-solid fa-handshake-angle"></i><span>Devenir partenaire</span></p>
+                    </a>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Contact</a>
+                </div>
             </div>
         </footer>
     </div>
