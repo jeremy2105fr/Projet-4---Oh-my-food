@@ -414,7 +414,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-left: 5%;
-  padding-right: 25%;
+  padding-right: 30%;
 }
 .header-restaurant .nav__retour-index {
   color: #101010;
@@ -431,6 +431,18 @@ body {
   width: 100%;
   height: 100%;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header-restaurant .nav {
+    width: 100%;
+    padding-right: 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-restaurant .nav {
+    width: 100%;
+    padding-right: 45%;
+  }
+}
 
 .main-restaurant {
   background-color: #f7f7f7;
@@ -442,6 +454,7 @@ body {
 .main-restaurant .baniere img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .main-restaurant .menu-restaurant {
   padding: 30px 2% 0 2%;
@@ -468,6 +481,13 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  margin-right: 8%;
+}
+@media screen and (min-width: 768px) {
+  .main-restaurant .menu-restaurant__restaurant-titre {
+    width: 37%;
+    max-width: 300px;
+  }
 }
 .main-restaurant .menu-restaurant section {
   width: 90%;
@@ -476,23 +496,27 @@ body {
   align-items: center;
 }
 .main-restaurant .menu-restaurant section .titre-section {
-  width: 349px;
+  width: 99.8%;
+  max-width: 634px;
   padding-bottom: 0;
 }
 .main-restaurant .menu-restaurant section .titre-section h3 {
   width: 13%;
+  max-width: 40px;
   border-bottom: 3px #99e2d0 solid;
   margin-block-end: 10px;
 }
 .main-restaurant .menu-restaurant section .carte-menu {
-  width: 349px;
+  width: 99.8%;
+  max-width: 634px;
   height: 70px;
   margin-top: 15px;
   background-color: #ffffff;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  padding-left: 4%;
+  justify-content: space-between;
+  padding-left: 20px;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -531,6 +555,7 @@ body {
   color: #ffffff;
   width: 50px;
   border-radius: 0 15px 15px 0;
+  visibility: hidden;
 }
 .main-restaurant .menu-restaurant .btn {
   width: 186px;
@@ -543,6 +568,18 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(#FF79DA, #9356dc);
+}
+@media screen and (min-width: 768px) {
+  .main-restaurant {
+    background-color: #ffffff;
+  }
+  .main-restaurant .baniere {
+    height: 380px;
+  }
+  .main-restaurant .menu-restaurant {
+    max-width: 768px;
+    margin: auto;
+  }
 }
 
 footer {
