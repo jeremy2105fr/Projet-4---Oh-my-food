@@ -351,6 +351,9 @@ body {
   -webkit-text-stroke-color: #9356dc;
   visibility: visible;
 }
+.main-index .restaurants .cartes-restaurants article:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .main-index .restaurants {
     height: 620px;
@@ -594,6 +597,7 @@ body {
 }
 .main-restaurant .menu-restaurant section .carte-menu:hover {
   cursor: pointer;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
 }
 .main-restaurant .menu-restaurant section .carte-menu:active .prix-check {
   transform: translate(-50px, 0);
@@ -670,6 +674,9 @@ footer .mentions .liens-footer a i {
 }
 footer .mentions .liens-footer a span {
   margin-left: 10px;
+}
+footer .mentions .liens-footer a span:hover {
+  border-bottom: 2px #ffffff solid;
 }
 @media screen and (min-width: 768px) {
   footer {
