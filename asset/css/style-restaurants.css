@@ -16,6 +16,63 @@ body {
   margin: auto;
 }
 
+.chargement {
+  opacity: 0;
+  display: none;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 160px;
+  background: linear-gradient(#f7f7f7 5%, #9356dc 79%);
+  width: 100%;
+  height: 100%;
+  animation: loader-hide 2s;
+}
+@keyframes loader-hide {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+    display: none;
+  }
+}
+.chargement h1 {
+  width: 100%;
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 10vh;
+  background: -webkit-linear-gradient(#9356dc, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .chargement h1 {
+    font-size: 50px;
+  }
+}
+.chargement .loader {
+  border: 5px solid #ffffff;
+  border-top: 5px solid #9356dc;
+  border-bottom: 5px solid #FF79DA;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  animation: rotation 2s;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .header-index {
   position: fixed;
   z-index: 2;
@@ -334,11 +391,11 @@ body {
   height: 21px;
   font-size: 20px;
   position: absolute;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
 }
 .main-index .restaurants .cartes-restaurants article a .description-coeur-carte .coeur .base {
   color: #f7f7f7;
-  -webkit-text-stroke-color: #9356dc;
+  -webkit-text-stroke-color: #101010;
 }
 .main-index .restaurants .cartes-restaurants article a .description-coeur-carte .coeur .plein {
   visibility: hidden;
@@ -348,7 +405,9 @@ body {
 }
 .main-index .restaurants .cartes-restaurants article a .description-coeur-carte:active .plein {
   color: #9356dc;
-  -webkit-text-stroke-color: #9356dc;
+  background: -webkit-linear-gradient(#9356dc, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   visibility: visible;
 }
 .main-index .restaurants .cartes-restaurants article:hover {
@@ -483,6 +542,7 @@ body {
 }
 .main-restaurant .menu-restaurant__restaurant-titre {
   width: 349px;
+  padding-left: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -501,7 +561,7 @@ body {
   height: 21px;
   font-size: 20px;
   position: absolute;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
 }
 .main-restaurant .menu-restaurant__restaurant-titre--coeur .base {
   color: #f7f7f7;
@@ -518,7 +578,9 @@ body {
 }
 .main-restaurant .menu-restaurant__restaurant-titre--coeur:active .plein {
   color: #9356dc;
-  -webkit-text-stroke-color: #9356dc;
+  background: -webkit-linear-gradient(#9356dc, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   visibility: visible;
 }
 @media screen and (min-width: 768px) {
@@ -529,14 +591,38 @@ body {
 }
 .main-restaurant .menu-restaurant section {
   width: 90%;
+  height: 310px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: apparition 0.28s ease-in-out;
+  animation-play-state: paused;
+}
+.main-restaurant .menu-restaurant section:hover {
+  animation-play-state: running;
+}
+@keyframes apparition {
+  0% {
+    opacity: 0.8;
+    height: 10px;
+  }
+}
+.main-restaurant .menu-restaurant section:hover .titre-section {
+  animation-play-state: paused;
 }
 .main-restaurant .menu-restaurant section .titre-section {
   width: 99.8%;
   max-width: 634px;
   padding-bottom: 0;
+  animation: look-me 5s infinite;
+}
+@keyframes look-me {
+  30% {
+    opacity: 0.9;
+    text-shadow: #353535 1px 3px 5px;
+  }
 }
 .main-restaurant .menu-restaurant section .titre-section h3 {
   width: 13%;
@@ -578,7 +664,7 @@ body {
   height: 100%;
   position: relative;
   left: 50px;
-  transition: transform 330ms ease-in-out;
+  transition: transform 330ms;
 }
 .main-restaurant .menu-restaurant section .carte-menu .prix-check h5 {
   display: flex;
@@ -599,7 +685,7 @@ body {
   cursor: pointer;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
 }
-.main-restaurant .menu-restaurant section .carte-menu:active .prix-check {
+.main-restaurant .menu-restaurant section .carte-menu:hover .prix-check {
   transform: translate(-50px, 0);
 }
 .main-restaurant .menu-restaurant .btn {
