@@ -25,38 +25,47 @@
         <header class="header-restaurant">
             <!-- Navigateur avec le lien-logo "retour en haut" du site et un lien pour pour retourner à index.html-->
             <nav class="nav">
-                <a class="nav__retour-index" href="../index.html">
+                <a class="retour-index" href="../index.html">
                     <i class=" fa-sharp fa-solid fa-arrow-left"></i>
                 </a>
-                <div class="nav__logo-site">
-                    <a href="#"><img src="../../asset/images/logo/ohmyfood.png"
-                            alt="Logo et titre du site OhMyFood"></a>
+                <div class="logo-site">
+                    <a href="#">
+                        <img src="../../asset/images/logo/ohmyfood.png" alt="Logo et titre du site OhMyFood">
+                    </a>
                 </div>
             </nav>
         </header>
-
+        <!-- Partie Main = .baniere + .menu-restaurant -->
         <main class="main-restaurant">
+            <!-- Baniere pour qui affiche une image du restaurant-->
             <div class="baniere">
                 <img src="../../asset/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
                     alt="Photo d'un plat dans le restaurant À la française">
             </div>
+            <!-- Menu-restaurant = 1 titre + 3 sections + 1 'bouton' -->
             <div class="menu-restaurant">
-                <div class="menu-restaurant__restaurant-titre">
+                <!-- restaurant-titre = 1 titre + 1 coeur  -->
+                <div class="restaurant-titre">
                     <h2>À la française</h2>
-                    <div class="menu-restaurant__restaurant-titre--coeur">
+                    <div class="restaurant-coeur">
                         <i class=" base fa fa-heart"></i>
                         <i class=" plein fa fa-heart"></i>
                     </div>
                 </div>
+                <!-- 3 sections contiennent tous un titre et 3~4 articles -->
                 <section class="entrees">
+                    <!--Décrit le type d'un menu entrée/plat/dessert -->
                     <div class="titre-section">
                         <h3>ENTRÉES</h3>
                     </div>
+                    <!-- les articles décrivent le menu et leur prix, avec une animation pour "valider" -->
                     <article class="carte-menu">
+                        <!-- Décrit le menu -->
                         <div class="titre-menu">
                             <h4>Tartare de poulpe acidulé</h4>
                             <p>Aux zestes d'orange</p>
                         </div>
+                        <!-- le prix et une partie a animer pour "valider" -->
                         <div class="prix-check">
                             <h5>25€</h5>
                             <div class="check">
@@ -171,11 +180,13 @@
                         </div>
                     </article>
                 </section>
+                <!-- 'Bouton' pour valider la commande -->
                 <div class="btn">
                     <p>Commander</p>
                 </div>
             </div>
         </main>
+        <!--Partie footer -->
         <footer>
             <div class="mentions">
                 <div class="titre-footer">

@@ -1,3 +1,34 @@
+@keyframes loader-hide {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+    display: none;
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes apparition {
+  0% {
+    opacity: 0.8;
+    height: 10px;
+  }
+}
+@keyframes look-me {
+  30% {
+    opacity: 0.9;
+    text-shadow: #353535 1px 3px 5px;
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -20,26 +51,15 @@ body {
   opacity: 0;
   display: none;
   z-index: -1;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 160px;
-  background: linear-gradient(#f7f7f7 5%, #9356dc 79%);
   width: 100%;
   height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 160px;
+  background: linear-gradient(#f7f7f7 5%, #9356dc 79%);
   animation: loader-hide 2s;
-}
-@keyframes loader-hide {
-  0% {
-    opacity: 1;
-    z-index: 3;
-  }
-  100% {
-    opacity: 0;
-    z-index: 0;
-    display: none;
-  }
 }
 .chargement h1 {
   width: 100%;
@@ -63,14 +83,6 @@ body {
   width: 90px;
   height: 90px;
   animation: rotation 2s;
-}
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .header-index {
@@ -114,8 +126,8 @@ body {
 }
 .main-index .localisation-exploration .localisation form {
   display: flex;
-  width: 180px;
   align-items: center;
+  width: 180px;
   font-size: 16px;
 }
 .main-index .localisation-exploration .localisation form button,
@@ -138,10 +150,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   flex-direction: column;
-  background-color: #f7f7f7;
+  text-align: center;
   height: 240px;
+  background-color: #f7f7f7;
   padding-bottom: 15px;
 }
 .main-index .localisation-exploration .exploration .texte-exploration {
@@ -212,8 +224,8 @@ body {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  text-decoration: none;
   justify-content: space-around;
+  text-decoration: none;
   font-size: 15px;
   color: #101010;
 }
@@ -244,11 +256,11 @@ body {
     height: 150px;
   }
   .main-index .fonctionnement .titre-fonctionnement {
-    width: 80%;
+    width: 90%;
     margin-left: 0px;
   }
   .main-index .fonctionnement .boites-fonctionnement {
-    width: 80%;
+    width: 90%;
     height: 100px;
     flex-direction: row;
     align-items: center;
@@ -444,8 +456,8 @@ body {
     width: 910px;
   }
   .main-index .restaurants .cartes-restaurants {
-    width: 90%;
     max-width: 953px;
+    width: 90%;
     margin-top: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -462,7 +474,7 @@ body {
   }
 }
 
-.menu-restaurant__restaurant-titre h2,
+.restaurant-titre h2,
 .titre-footer h3 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
@@ -487,18 +499,18 @@ body {
   padding-left: 5%;
   padding-right: 30%;
 }
-.header-restaurant .nav__retour-index {
+.header-restaurant .nav .retour-index {
   color: #101010;
   font-size: 24px;
 }
-.header-restaurant .nav__retour-index:hover {
+.header-restaurant .nav .retour-index:hover {
   color: #9356dc;
 }
-.header-restaurant .nav__logo-site {
+.header-restaurant .nav .logo-site {
   width: 150px;
   height: 30px;
 }
-.header-restaurant .nav__logo-site img {
+.header-restaurant .nav .logo-site img {
   width: 100%;
   height: 100%;
 }
@@ -540,43 +552,43 @@ body {
   flex-direction: column;
   background-color: #f7f7f7;
 }
-.main-restaurant .menu-restaurant__restaurant-titre {
+.main-restaurant .menu-restaurant .restaurant-titre {
   width: 349px;
   padding-left: 20px;
   display: flex;
   justify-content: space-between;
 }
-.main-restaurant .menu-restaurant__restaurant-titre h2 {
+.main-restaurant .menu-restaurant .restaurant-titre h2 {
   font-size: 1.35em;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   margin-right: 8%;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur .fa {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur .fa {
   width: 22px;
   height: 21px;
   font-size: 20px;
   position: absolute;
   -webkit-text-stroke-width: 1px;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur .base {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur .base {
   color: #f7f7f7;
   -webkit-text-stroke-color: #101010;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur .plein {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur .plein {
   visibility: hidden;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur:hover {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur:hover {
   cursor: pointer;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur:active .base {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur:active .base {
   visibility: hidden;
 }
-.main-restaurant .menu-restaurant__restaurant-titre--coeur:active .plein {
+.main-restaurant .menu-restaurant .restaurant-titre .restaurant-coeur:active .plein {
   color: #9356dc;
   background: -webkit-linear-gradient(#9356dc, #FF79DA);
   -webkit-background-clip: text;
@@ -584,7 +596,7 @@ body {
   visibility: visible;
 }
 @media screen and (min-width: 768px) {
-  .main-restaurant .menu-restaurant__restaurant-titre {
+  .main-restaurant .menu-restaurant .restaurant-titre {
     width: 37%;
     max-width: 300px;
   }
@@ -603,12 +615,6 @@ body {
 .main-restaurant .menu-restaurant section:hover {
   animation-play-state: running;
 }
-@keyframes apparition {
-  0% {
-    opacity: 0.8;
-    height: 10px;
-  }
-}
 .main-restaurant .menu-restaurant section:hover .titre-section {
   animation-play-state: paused;
 }
@@ -617,12 +623,6 @@ body {
   max-width: 634px;
   padding-bottom: 0;
   animation: look-me 5s infinite;
-}
-@keyframes look-me {
-  30% {
-    opacity: 0.9;
-    text-shadow: #353535 1px 3px 5px;
-  }
 }
 .main-restaurant .menu-restaurant section .titre-section h3 {
   width: 13%;

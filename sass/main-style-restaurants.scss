@@ -12,8 +12,10 @@ $white: #ffffff;
 $black: #101010;
 $gray: #353535;
 $gray-two: #eaeaea;
-
-$key-width-responsive: 953px;
+// Dimensions
+$width-restaurant: 634px;
+$max-width: 100%;
+$max-height: 100%;
 
 // Mixin
 @mixin flex-center {
@@ -21,6 +23,24 @@ $key-width-responsive: 953px;
     align-items: center;
     justify-content: center;
     // @include flex-center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    //@include flex-column;
+}
+
+@mixin flex-just-align-center {
+    display: flex;
+    align-items: center;
+    //@include flex-just-align-center;
+}
+
+@mixin full-w-h($max-width, $max-height) {
+    width: $max-width;
+    height: $max-height;
+    //@include full-w-h($max-width, $max-height);
 }
 
 @mixin background-btn($primary, $pink) {
@@ -33,6 +53,12 @@ $key-width-responsive: 953px;
     // @include fit-decktop-index;
 }
 
+@mixin font-no-initial-margin {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    //@include font-no-initial-margin;
+}
+
 @mixin font-gradiant($primary, $pink) {
     background: -webkit-linear-gradient($primary, $pink);
     -webkit-background-clip: text;
@@ -40,12 +66,76 @@ $key-width-responsive: 953px;
     // @include font-gradiant($primary, $pink); 
 }
 
+@mixin form-no-border {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    //@include form-no-border;
+}
+
+@mixin grid-cartes {
+    width: 90%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 30px;
+    //@include grid-cartes;
+}
+
+// Keyframes
+//Animations de l'index
+@keyframes loader-hide {
+    //Animation de la disparition du loader
+
+    0% {
+        opacity: 1;
+        z-index: 3;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: 0;
+        display: none;
+    }
+}
+
+@keyframes rotation {
+
+    //Animation de la roue pendant dans le "loading"
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//Animations des pages restaurants
+@keyframes apparition {
+
+    //Déroule les cartes du restaurant
+    0% {
+        opacity: 0.8;
+        height: 10px;
+    }
+}
+
+@keyframes look-me {
+
+    //Ajoute un visuel qui attire l'interaction sur les titres des menus des restaurants
+    30% {
+        opacity: 0.9;
+        text-shadow: $gray 1px 3px 5px;
+    }
+}
 
 // Partie Police
 * {
     font-family: "Roboto", sans-serif;
 }
 
+//Options
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -56,43 +146,28 @@ body {
 }
 
 .page-principale {
-    width: 100%;
+    width: $max-width;
     margin: auto;
 }
 
-
-// -------- Partie STYLE de la page Index ----------
+//----------------------------------------------------------
+// ----------Partie STYLE des pages de l'index--------------
+//----------------------------------------------------------
 //  Partie du chargement
 .chargement {
     opacity: 0;
     display: none;
     z-index: -1;
+    @include full-w-h($max-width, $max-height);
     position: absolute;
-    display: flex;
+    @include flex-column;
     align-items: center;
-    flex-direction: column;
     padding-top: 160px;
     background: linear-gradient($background 5%, $primary 79%);
-    width: 100%;
-    height: 100%;
-    animation: loader-hide 2s;
-
-    // Animation de la "disparition" du chargement 
-    @keyframes loader-hide {
-        0% {
-            opacity: 1;
-            z-index: 3;
-        }
-
-        100% {
-            opacity: 0;
-            z-index: 0;
-            display: none;
-        }
-    }
+    animation: loader-hide 2s; // Animation de la "disparition" du chargement 
 
     h1 {
-        width: 100%;
+        width: $max-width;
         text-align: center;
         font-family: "Shrikhand", cursive;
         font-size: 10vh;
@@ -112,18 +187,7 @@ body {
         width: 90px;
         height: 90px;
         animation: rotation 2s;
-
         // Animation de la rotation de la "roue"
-        @keyframes rotation {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
     }
 
 }
@@ -132,7 +196,7 @@ body {
 .header-index {
     position: fixed;
     z-index: 2;
-    width: 100%;
+    width: $max-width;
     background-color: $white;
 
     nav {
@@ -145,8 +209,7 @@ body {
             height: 30px;
 
             & img {
-                width: 100%;
-                height: 100%;
+                @include full-w-h($max-width, $max-height);
             }
         }
     }
@@ -161,33 +224,30 @@ body {
 
         // Bloc Localisation
         .localisation {
-            width: 100%;
+            width: $max-width;
             height: 50px;
             @include flex-center;
             background-color: $gray-two;
 
             form {
-                display: flex;
+                @include flex-just-align-center;
                 width: 180px;
-                align-items: center;
                 font-size: 16px;
 
                 button,
                 input {
                     color: $gray;
-                    height: 100%;
+                    height: $max-height;
                     font-weight: bold;
                 }
 
                 button {
-                    border: none;
-                    background-color: rgba(255, 255, 255, 0);
+                    @include form-no-border;
                     width: 25%;
                 }
 
                 input {
-                    border: none;
-                    background-color: rgba(255, 255, 255, 0);
+                    @include form-no-border;
                     width: 60%;
                 }
             }
@@ -196,10 +256,10 @@ body {
         /* Bloc Exploration  */
         .exploration {
             @include flex-center;
-            text-align: center;
             flex-direction: column;
-            background-color: $background;
+            text-align: center;
             height: 240px;
+            background-color: $background;
             padding-bottom: 15px;
 
             .texte-exploration {
@@ -216,7 +276,7 @@ body {
                 }
 
                 @media screen and (min-width: 768px) {
-                    width: 100%;
+                    width: $max-width;
 
                     h2 {
                         font-size: 37px;
@@ -237,23 +297,19 @@ body {
                 font-weight: bold;
                 text-decoration: none;
 
-
                 &:hover {
-
                     filter: brightness(120%);
                     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
                     cursor: pointer;
                 }
             }
 
-
         }
     }
 
     /* Bloc fonctionnement */
     .fonctionnement {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         justify-content: space-around;
         align-items: center;
         height: 380px;
@@ -267,13 +323,11 @@ body {
             h2 {
                 margin-block-end: 0;
             }
-
         }
 
         // Gestions de boites-fonctionnement 
         .boites-fonctionnement {
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
             justify-content: space-around;
             height: 280px;
 
@@ -285,10 +339,9 @@ body {
                 padding-right: 20px;
                 border-radius: 20px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-                display: flex;
-                align-items: center;
-                text-decoration: none;
+                @include flex-just-align-center;
                 justify-content: space-around;
+                text-decoration: none;
                 font-size: 15px;
                 color: $black;
 
@@ -301,7 +354,7 @@ body {
                 }
 
                 p {
-                    width: 100%;
+                    width: $max-width;
                     margin-left: 15px;
                     font-weight: bold;
                 }
@@ -316,22 +369,18 @@ body {
                     margin-left: -15px;
                 }
             }
-
-
-
         }
 
         @media screen and (min-width: 768px) and (max-width: 1023px) {
             height: 150px;
 
             .titre-fonctionnement {
-                width: 80%;
+                width: 90%;
                 margin-left: 0px;
             }
 
             .boites-fonctionnement {
-
-                width: 80%;
+                width: 90%;
                 height: 100px;
                 flex-direction: row;
                 align-items: center;
@@ -362,7 +411,6 @@ body {
             }
 
             .boites-fonctionnement {
-                // border: 6px $green-font solid;
                 width: 80%;
                 @include fit-desktop-index;
                 height: 100px;
@@ -377,7 +425,6 @@ body {
                     p {
                         margin-right: 30px;
                         text-align: center;
-
                     }
 
                     i {
@@ -390,7 +437,6 @@ body {
                 }
             }
         }
-
     }
 
     /* Bloc restaurants */
@@ -398,8 +444,7 @@ body {
         height: 1000px;
         margin-top: 50px;
         padding-top: 50px;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         align-items: center;
         background-color: $background;
 
@@ -408,15 +453,13 @@ body {
             margin-left: -35px;
 
             h2 {
-                // margin-block-start: 0;
                 margin-block-end: 0em;
             }
         }
 
         .cartes-restaurants {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+            width: $max-width;
+            @include flex-column;
             align-items: center;
 
             /* Gestion des cartes restaurants */
@@ -432,13 +475,12 @@ body {
 
                 a {
                     display: block;
-                    width: 100%;
-                    height: 100%;
+                    @include full-w-h($max-width, $max-height);
                     text-decoration: none;
 
                     img {
                         object-fit: cover;
-                        width: 100%;
+                        width: $max-width;
                         height: 141px;
                     }
 
@@ -454,8 +496,7 @@ body {
                         padding-top: 3px;
 
                         p {
-                            margin-block-start: 0;
-                            margin-block-end: 0;
+                            @include font-no-initial-margin;
                             color: $green-font;
                             font-weight: bold;
                         }
@@ -527,14 +568,12 @@ body {
                         }
 
                     }
-
                 }
 
                 &:hover {
                     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
                 }
             }
-
         }
 
         @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -545,13 +584,7 @@ body {
             }
 
             .cartes-restaurants {
-                width: 90%;
-                margin-top: 15px;
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 200px 200px;
-                gap: 30px;
+                @include grid-cartes;
 
                 article {
                     width: 95%;
@@ -562,7 +595,6 @@ body {
                             left: 78.5%;
                         }
                     }
-
                 }
             }
         }
@@ -571,19 +603,12 @@ body {
             height: 550px;
 
             .titre-restaurants {
-
                 width: 910px;
             }
 
             .cartes-restaurants {
-                width: 90%;
                 max-width: 953px;
-                margin-top: 15px;
-
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 200px 200px;
-                gap: 30px;
+                @include grid-cartes;
 
                 article {
                     width: 95%;
@@ -598,7 +623,6 @@ body {
                 }
             }
         }
-
     }
 }
 
@@ -606,7 +630,7 @@ body {
 //----------------------------------------------------------
 // ----------Partie STYLE des pages des Restaurants---------
 //----------------------------------------------------------
-.menu-restaurant__restaurant-titre h2,
+.restaurant-titre h2,
 .titre-footer h3 {
     font-family: "Shrikhand", cursive;
     font-weight: normal;
@@ -616,7 +640,7 @@ body {
 .header-restaurant {
     position: fixed;
     z-index: 2;
-    width: 100%;
+    width: $max-width;
     background-color: $white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
     @include flex-center;
@@ -624,13 +648,12 @@ body {
     .nav {
         width: 80%;
         height: 63px;
-        display: flex;
-        align-items: center;
+        @include flex-just-align-center;
         justify-content: space-between;
         padding-left: 5%;
         padding-right: 30%;
 
-        &__retour-index {
+        .retour-index {
             color: $black;
             font-size: 24px;
 
@@ -639,30 +662,27 @@ body {
             }
         }
 
-        &__logo-site {
+        .logo-site {
             width: 150px;
             height: 30px;
 
             & img {
-                width: 100%;
-                height: 100%;
+                @include full-w-h($max-width, $max-height);
             }
         }
 
         // Tablette
         @media screen and (min-width: 768px) and (max-width: 1023px) {
-            width: 100%;
+            width: $max-width;
             padding-right: 40%;
         }
 
         // écrans moyens & grands
         @media screen and (min-width: 1024px) {
-            width: 100%;
+            width: $max-width;
             padding-right: 45%;
         }
     }
-
-
 }
 
 // Partie Main 
@@ -671,15 +691,14 @@ body {
 
     // Gestion de la baniere 
     .baniere {
-        width: 100%;
+        width: $max-width;
         height: 330px;
         position: relative;
 
         top: 50px;
 
         & img {
-            width: 100%;
-            height: 100%;
+            @include full-w-h($max-width, $max-height);
             object-fit: cover;
         }
     }
@@ -694,21 +713,17 @@ body {
         flex-direction: column;
         background-color: $background;
 
-
-
-
-        &__restaurant-titre {
+        .restaurant-titre {
             width: 349px;
             padding-left: 20px;
             display: flex;
             justify-content: space-between;
 
-            & h2 {
+            h2 {
                 font-size: 1.35em;
-
             }
 
-            &--coeur {
+            .restaurant-coeur {
                 @include flex-center;
                 font-size: 24px;
                 margin-right: 8%;
@@ -727,7 +742,6 @@ body {
                 }
 
                 .plein {
-
                     visibility: hidden;
                 }
 
@@ -743,7 +757,6 @@ body {
                     color: $primary;
                     @include font-gradiant($primary, $pink);
                     visibility: visible;
-
                 }
             }
 
@@ -759,45 +772,25 @@ body {
             height: 310px;
             padding-top: 20px;
             padding-bottom: 20px;
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
             align-items: center;
             animation: apparition 0.28s ease-in-out;
             animation-play-state: paused;
 
-
             &:hover {
                 animation-play-state: running;
-
-                @keyframes apparition {
-                    0% {
-                        opacity: 0.8;
-                        height: 10px;
-                    }
-                }
-
 
                 .titre-section {
                     animation-play-state: paused;
                 }
             }
 
-
-
             // Gestion des titres des sections 
             .titre-section {
                 width: 99.8%;
-                max-width: 634px;
+                max-width: $width-restaurant;
                 padding-bottom: 0;
                 animation: look-me 5s infinite;
-
-                @keyframes look-me {
-                    30% {
-                        opacity: 0.9;
-                        text-shadow: $gray 1px 3px 5px;
-                    }
-                }
-
 
                 & h3 {
                     width: 13%;
@@ -811,19 +804,16 @@ body {
             // Gestion des cartes dans les menus
             .carte-menu {
                 width: 99.8%;
-                max-width: 634px;
+                max-width: $width-restaurant;
                 height: 70px;
                 margin-top: 15px;
                 background-color: $white;
                 box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-                display: flex;
-                align-items: center;
+                @include flex-just-align-center;
                 justify-content: space-between;
                 padding-left: 20px;
                 border-radius: 15px;
                 overflow: hidden;
-
-
 
                 .titre-menu {
                     overflow-x: hidden;
@@ -846,7 +836,7 @@ body {
 
                 .prix-check {
                     display: flex;
-                    height: 100%;
+                    height: $max-height;
                     position: relative;
                     left: 50px;
                     transition: transform 330ms;
@@ -916,7 +906,9 @@ body {
     }
 }
 
-// Partie STYLE du Footer des pages Index ET Restaurants
+//-------------------------------------------------------------------------
+// ----------Partie STYLE du footer des pages index et Restaurants---------
+//-------------------------------------------------------------------------
 footer {
     background-color: $gray;
     color: $white;
@@ -926,8 +918,7 @@ footer {
     height: 200px;
 
     .mentions {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         margin-left: 5%;
 
         .titre-footer {
@@ -941,8 +932,7 @@ footer {
         }
 
         .liens-footer {
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
 
             a {
                 color: white;
@@ -950,8 +940,7 @@ footer {
                 margin-top: 5px;
 
                 p {
-                    margin-block-start: 0;
-                    margin-block-end: 0;
+                    @include font-no-initial-margin;
                 }
 
                 i {
@@ -967,12 +956,8 @@ footer {
                         border-bottom: 2px $white solid;
                     }
                 }
-
-
             }
-
         }
-
     }
 
     @media screen and (min-width: 768px) {
@@ -991,11 +976,10 @@ footer {
             }
 
             .liens-footer {
-
                 flex-direction: row;
                 align-items: self-end;
                 justify-content: space-around;
-                height: 100%;
+                height: $max-height;
 
                 a {
                     margin-right: 30px;
