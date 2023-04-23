@@ -1,0 +1,37 @@
+.chargement {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+    @include full-w-h($max-width, $max-height);
+    position: absolute;
+    @include flex-column;
+    align-items: center;
+    padding-top: 160px;
+    background: linear-gradient($background 5%, $primary 79%);
+    @include loader-hide;
+
+    h1 {
+        width: $max-width;
+        text-align: center;
+        font-family: "Shrikhand", cursive;
+        font-size: 10vh;
+        @include font-gradiant($primary, $pink);
+
+        @media screen and (min-width: 375px) and (max-width: 768px) {
+            font-size: 50px;
+        }
+    }
+
+    // Gestion de la "roue"
+    .loader {
+        border: 5px solid $white;
+        border-top: 5px solid $primary;
+        border-bottom: 5px solid $pink;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        @include rotation;
+
+    }
+
+}

@@ -1,0 +1,63 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // @include flex-center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    //@include flex-column;
+}
+
+@mixin flex-just-align-center {
+    display: flex;
+    align-items: center;
+    //@include flex-just-align-center;
+}
+
+@mixin full-w-h($max-width, $max-height) {
+    width: $max-width;
+    height: $max-height;
+    //@include full-w-h($max-width, $max-height);
+}
+
+@mixin background-btn($primary, $pink) {
+    background: linear-gradient($pink, $primary);
+    // @include background-btn($primary, $pink);
+}
+
+@mixin fit-desktop-index {
+    width: 953px;
+    // @include fit-decktop-index;
+}
+
+@mixin font-no-initial-margin {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    //@include font-no-initial-margin;
+}
+
+@mixin font-gradiant($primary, $pink) {
+    background: -webkit-linear-gradient($primary, $pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // @include font-gradiant($primary, $pink); 
+}
+
+@mixin form-no-border {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    //@include form-no-border;
+}
+
+@mixin grid-cartes {
+    width: 90%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 30px;
+    //@include grid-cartes;
+}

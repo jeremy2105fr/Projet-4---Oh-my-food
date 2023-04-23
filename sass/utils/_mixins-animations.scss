@@ -1,0 +1,19 @@
+@mixin loader-hide {
+    animation: loader-hide 2s; // Animation de la "disparition" du chargement
+    //@include loader-hide;
+}
+
+@mixin rotation {
+    animation: rotation 2s; // Animation de la rotation de la "roue"
+    //@include rotation;
+}
+
+@mixin apparition {
+    animation: apparition 0.28s ease-in-out;
+    //@include apparition;
+}
+
+@mixin look-me {
+    animation: look-me 5s infinite;
+    //@include look-me;
+}

@@ -1,0 +1,46 @@
+//Animations de l'index
+@keyframes loader-hide {
+    //Animation de la disparition du loader
+
+    0% {
+        opacity: 1;
+        z-index: 3;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: 0;
+        display: none;
+    }
+}
+
+@keyframes rotation {
+
+    //Animation de la roue pendant dans le "loading"
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//Animations des pages restaurants
+@keyframes apparition {
+
+    //Déroule les cartes du restaurant
+    0% {
+        opacity: 0.8;
+        height: 10px;
+    }
+}
+
+@keyframes look-me {
+
+    //Ajoute un visuel qui attire l'interaction sur les titres des menus des restaurants
+    30% {
+        opacity: 0.9;
+        text-shadow: $gray 1px 3px 5px;
+    }
+}

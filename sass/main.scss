@@ -1,0 +1,44 @@
+// Variables
+@import "./utils/variables";
+
+// Mixin
+@import "./utils/mixins";
+
+//Mixins d'animations
+@import "./utils/mixins-animations";
+
+// Keyframes
+@import "./base/animations";
+
+// Partie Police
+@import "./base/typography";
+
+//Options
+@import "./base/base";
+
+//----------------------------------------------------------
+// ----------Partie STYLE des pages de l'index--------------
+//----------------------------------------------------------
+//  Partie du chargement
+@import "./components/loader";
+
+// Partie Header 
+@import "./layouts/header-index";
+
+/* Partie main  */
+@import "./layouts/main-index";
+
+
+//----------------------------------------------------------
+// ----------Partie STYLE des pages des Restaurants---------
+//----------------------------------------------------------
+// Partie Header
+@import "./layouts/header-restaurants";
+
+// Partie Main 
+@import "./layouts/main-restaurant";
+
+//-------------------------------------------------------------------------
+// ----------Partie STYLE du footer des pages index et Restaurants---------
+//-------------------------------------------------------------------------
+@import "./layouts/footer";

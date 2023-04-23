@@ -1,0 +1,409 @@
+.main-index {
+    padding-top: 63px;
+
+    // Blocs Localisation et Exploration 
+    .localisation-exploration {
+
+        // Bloc Localisation
+        .localisation {
+            width: $max-width;
+            height: 50px;
+            @include flex-center;
+            background-color: $gray-two;
+
+            form {
+                @include flex-just-align-center;
+                width: 180px;
+                font-size: 16px;
+
+                button,
+                input {
+                    color: $gray;
+                    height: $max-height;
+                    font-weight: bold;
+                }
+
+                button {
+                    @include form-no-border;
+                    width: 25%;
+                }
+
+                input {
+                    @include form-no-border;
+                    width: 60%;
+                }
+            }
+        }
+
+        /* Bloc Exploration  */
+        .exploration {
+            @include flex-center;
+            flex-direction: column;
+            text-align: center;
+            height: 240px;
+            background-color: $background;
+            padding-bottom: 15px;
+
+            .texte-exploration {
+                width: 90%;
+                height: 60%;
+
+                h2 {
+                    margin-block-end: 0px;
+                    font-weight: bold;
+                }
+
+                p {
+                    margin-block-end: 0px;
+                }
+
+                @media screen and (min-width: 768px) {
+                    width: $max-width;
+
+                    h2 {
+                        font-size: 37px;
+                    }
+
+                }
+            }
+
+            a {
+                width: 219px;
+                height: 50px;
+                margin-top: 10px;
+                @include flex-center;
+                border-radius: 55px;
+                @include background-btn($primary, $pink);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+                color: $white;
+                font-weight: bold;
+                text-decoration: none;
+
+                &:hover {
+                    filter: brightness(120%);
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+    /* Bloc fonctionnement */
+    .fonctionnement {
+        @include flex-column;
+        justify-content: space-around;
+        align-items: center;
+        height: 380px;
+        background-color: $white;
+
+        // Le titre du bloc "Fonctionnment"
+        .titre-fonctionnement {
+            width: 219px;
+            margin-left: -25px;
+
+            h2 {
+                margin-block-end: 0;
+            }
+        }
+
+        // Gestions de boites-fonctionnement 
+        .boites-fonctionnement {
+            @include flex-column;
+            justify-content: space-around;
+            height: 280px;
+
+            //  Gestions des boites 
+            a {
+                background-color: $background;
+                width: 90%;
+                height: 62.38px;
+                padding-right: 20px;
+                border-radius: 20px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                @include flex-just-align-center;
+                justify-content: space-around;
+                text-decoration: none;
+                font-size: 15px;
+                color: $black;
+
+                &:hover i {
+                    color: $primary;
+                }
+
+                i {
+                    margin-left: 10px;
+                }
+
+                p {
+                    width: $max-width;
+                    margin-left: 15px;
+                    font-weight: bold;
+                }
+
+                .nombre {
+                    background-color: $primary;
+                    color: $white;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 25px;
+                    @include flex-center;
+                    margin-left: -15px;
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            height: 150px;
+
+            .titre-fonctionnement {
+                width: 90%;
+                margin-left: 0px;
+            }
+
+            .boites-fonctionnement {
+                width: 90%;
+                height: 100px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    width: 25%;
+
+                    p {
+                        margin-left: 8px;
+                        text-align: center;
+                    }
+
+                    .nombre {
+                        margin-left: -14px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            height: 150px;
+
+            .titre-fonctionnement {
+                width: 80%;
+                @include fit-desktop-index;
+                margin-left: 0px;
+            }
+
+            .boites-fonctionnement {
+                width: 80%;
+                @include fit-desktop-index;
+                height: 100px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    width: 28%;
+                    max-width: 258px;
+
+                    p {
+                        margin-right: 30px;
+                        text-align: center;
+                    }
+
+                    i {
+                        margin-left: 20px;
+                    }
+
+                    .nombre {
+                        margin-left: -14px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Bloc restaurants */
+    .restaurants {
+        height: 1000px;
+        margin-top: 50px;
+        padding-top: 50px;
+        @include flex-column;
+        align-items: center;
+        background-color: $background;
+
+        .titre-restaurants {
+            width: 219px;
+            margin-left: -35px;
+
+            h2 {
+                margin-block-end: 0em;
+            }
+        }
+
+        .cartes-restaurants {
+            width: $max-width;
+            @include flex-column;
+            align-items: center;
+
+            /* Gestion des cartes restaurants */
+            article {
+                width: 95%;
+                max-width: 340px;
+                height: 196px;
+                border-radius: 15px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                margin-top: 15px;
+
+                a {
+                    display: block;
+                    @include full-w-h($max-width, $max-height);
+                    text-decoration: none;
+
+                    img {
+                        object-fit: cover;
+                        width: $max-width;
+                        height: 141px;
+                    }
+
+                    .nouveau {
+                        background-color: $new-green;
+                        text-align: center;
+                        height: 19px;
+                        width: 75px;
+                        position: relative;
+                        bottom: 70%;
+                        left: 68.5%;
+                        font-size: 13px;
+                        padding-top: 3px;
+
+                        p {
+                            @include font-no-initial-margin;
+                            color: $green-font;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .ancien {
+                        visibility: hidden;
+                    }
+
+                    .description-coeur-carte {
+                        position: relative;
+                        bottom: 20px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-left: 10px;
+                        padding-right: 15px;
+
+                        .description {
+
+                            h4,
+                            p {
+                                margin-block-start: 2px;
+                                margin-block-end: 0;
+                                color: black;
+                            }
+
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .coeur {
+                            width: 25px;
+                            height: 25px;
+                            position: absolute;
+                            right: 20px;
+                            margin-top: 10px;
+
+
+                            .fa {
+                                width: 22px;
+                                height: 21px;
+
+                                font-size: 20px;
+                                position: absolute;
+                                -webkit-text-stroke-width: 1px;
+                            }
+
+                            .base {
+                                color: $background;
+                                -webkit-text-stroke-color: $black;
+                            }
+
+                            .plein {
+
+                                visibility: hidden;
+                            }
+                        }
+
+                        &:active .base {
+                            visibility: hidden;
+                        }
+
+                        &:active .plein {
+                            color: $primary;
+                            @include font-gradiant($primary, $pink);
+                            visibility: visible;
+                        }
+
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            height: 620px;
+
+            .titre-restaurants {
+                width: 85.5%;
+            }
+
+            .cartes-restaurants {
+                @include grid-cartes;
+
+                article {
+                    width: 95%;
+                    max-width: none;
+
+                    a {
+                        .nouveau {
+                            left: 78.5%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 1023px) {
+            height: 550px;
+
+            .titre-restaurants {
+                width: 910px;
+            }
+
+            .cartes-restaurants {
+                max-width: 953px;
+                @include grid-cartes;
+
+                article {
+                    width: 95%;
+                    max-width: none;
+
+                    a {
+                        .nouveau {
+                            left: 79%;
+                            bottom: 68%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

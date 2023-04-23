@@ -1,0 +1,21 @@
+.header-index {
+    position: fixed;
+    z-index: 2;
+    width: $max-width;
+    background-color: $white;
+
+    nav {
+        height: 63px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        @include flex-center;
+
+        .logo-site {
+            width: 150px;
+            height: 30px;
+
+            & img {
+                @include full-w-h($max-width, $max-height);
+            }
+        }
+    }
+}

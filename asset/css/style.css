@@ -33,6 +33,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+.restaurant-titre h2,
+.titre-footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+}
+
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -474,12 +480,6 @@ body {
   }
 }
 
-.restaurant-titre h2,
-.titre-footer h3 {
-  font-family: "Shrikhand", cursive;
-  font-weight: normal;
-}
-
 .header-restaurant {
   position: fixed;
   z-index: 2;
@@ -790,4 +790,4 @@ footer .mentions .liens-footer a span:hover {
   }
 }
 
-/*# sourceMappingURL=style-restaurants.css.map */
+/*# sourceMappingURL=style.css.map */
