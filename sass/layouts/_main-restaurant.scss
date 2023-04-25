@@ -86,6 +86,7 @@
             padding-bottom: 20px;
             @include flex-column;
             align-items: center;
+            //Animation qui permet le déroulement des plats à désactiver si choix d'animation alternative
             @include apparition;
             animation-play-state: paused;
 
@@ -102,7 +103,7 @@
                 width: 99.8%;
                 max-width: $width-restaurant;
                 padding-bottom: 0;
-                @include look-me;
+                @include look-me; //Animation avec un effet d'ombre pour les titres
 
                 & h3 {
                     width: 13%;
@@ -176,9 +177,7 @@
 
                     .prix-check {
                         transform: translate(-50px, 0);
-
                     }
-
                 }
             }
         }
@@ -189,7 +188,6 @@
             margin-top: 50px;
             margin-bottom: 30px;
             border-radius: 25px;
-
             color: $white;
             @include flex-center;
             @include background-btn($primary, $pink);
