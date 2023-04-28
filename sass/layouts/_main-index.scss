@@ -31,6 +31,11 @@
                 input {
                     @include form-no-border;
                     width: 60%;
+
+                    &:focus {
+                        // Supprime la bordure lors de la sélection 
+                        outline: none;
+                    }
                 }
             }
         }
