@@ -149,6 +149,7 @@ body {
   font-size: larger;
 }
 .main-index .localisation-exploration .localisation form button:hover {
+  cursor: pointer;
   background: -webkit-linear-gradient(#9356dc, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

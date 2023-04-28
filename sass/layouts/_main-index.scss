@@ -30,6 +30,7 @@
                     font-size: larger;
 
                     &:hover {
+                        cursor: pointer;
                         @include font-gradiant($primary, $pink);
                     }
                 }
