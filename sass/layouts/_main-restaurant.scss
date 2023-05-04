@@ -87,8 +87,8 @@
             @include flex-column;
             align-items: center;
             //Animation qui permet le déroulement des plats à désactiver si choix d'animation alternative
-            @include apparition;
-            animation-play-state: paused;
+            // @include apparition;
+            // animation-play-state: paused;
 
             &:hover {
                 animation-play-state: running;
