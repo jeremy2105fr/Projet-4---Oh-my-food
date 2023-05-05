@@ -26,7 +26,7 @@
         background-color: $background;
 
         .restaurant-titre {
-            width: 349px;
+            width: 300px;
             padding-left: 20px;
             display: flex;
             justify-content: space-between;
@@ -38,7 +38,7 @@
             .restaurant-coeur {
                 @include flex-center;
                 font-size: 24px;
-                margin-right: 8%;
+                margin-right: 20%;
 
                 .fa {
                     width: 22px;
@@ -62,14 +62,20 @@
                 }
 
                 &:active .base {
+                    transition: all 0.3s;
                     visibility: hidden;
                 }
 
                 &:active .plein {
                     color: $primary;
-                    @include font-gradiant($primary, $pink);
+                    @include font-gradiant($primary, $secondary);
                     visibility: visible;
+                    @include show-full-heart;
                 }
+            }
+
+            @media screen and (min-width: 320px) and (max-width: 374px) {
+                width: 290px;
             }
 
             @media screen and (min-width: 768px) {
@@ -86,29 +92,17 @@
             padding-bottom: 20px;
             @include flex-column;
             align-items: center;
-            //Animation qui permet le déroulement des plats à désactiver si choix d'animation alternative
-            @include apparition;
-            animation-play-state: paused;
-
-            &:hover {
-                animation-play-state: running;
-
-                .titre-section {
-                    animation-play-state: paused;
-                }
-            }
 
             // Gestion des titres des sections 
             .titre-section {
                 width: 99.8%;
                 max-width: $width-restaurant;
                 padding-bottom: 0;
-                @include look-me; //Animation avec un effet d'ombre pour les titres
 
                 & h3 {
                     width: 13%;
                     max-width: 40px;
-                    border-bottom: 3px $new-green solid;
+                    border-bottom: 3px $new-box-background solid;
                     margin-block-end: 10px;
                 }
 
@@ -145,6 +139,22 @@
                     p {
                         font-size: 12px;
                     }
+
+                }
+
+                // responsive pour la taille du texte dans les menus
+                @media screen and (min-width: 320px) and (max-width: 374px) {
+                    padding-left: 10px;
+
+                    .titre-menu {
+                        h4 {
+                            font-size: 12px;
+                        }
+
+                        p {
+                            font-size: 10px;
+                        }
+                    }
                 }
 
                 .prix-check {
@@ -163,17 +173,17 @@
 
                     .check {
                         @include flex-center;
-                        background-color: $new-green;
+                        background-color: $new-box-background;
                         color: $white;
                         width: 50px;
                         border-radius: 0 15px 15px 0;
-
                     }
                 }
 
                 &:hover {
+                    @include litle-transition;
                     cursor: pointer;
-                    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+                    @include litle-shadow-box;
 
                     .prix-check {
                         transform: translate(-50px, 0);
@@ -190,12 +200,41 @@
             border-radius: 25px;
             color: $white;
             @include flex-center;
-            @include background-btn($primary, $pink);
+            @include background-btn($primary, $secondary);
 
             &:hover {
+                @include litle-transition;
                 filter: brightness(130%);
                 box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
                 cursor: pointer;
+            }
+        }
+    }
+
+    // Contient juste les appels d'animations pour l'introduction des menus
+    .menu-restaurant {
+        section {
+            .titre-section h3 {
+                animation: introduction-menu 3s;
+            }
+
+            .carte-menu {
+                &:nth-child(2n) {
+                    animation: introduction-plat-1 3.5s;
+                }
+
+                &:nth-child(3n) {
+                    animation: introduction-plat-2 4s;
+                }
+
+                &:nth-child(4n),
+                &:nth-child(5n) {
+                    animation: introduction-plat-3 4.5s;
+                }
+
+                .prix-check {
+                    animation: prix-reveal 9s;
+                }
             }
         }
     }

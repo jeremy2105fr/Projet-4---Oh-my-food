@@ -23,9 +23,9 @@
     //@include full-w-h($max-width, $max-height);
 }
 
-@mixin background-btn($primary, $pink) {
-    background: linear-gradient($pink, $primary);
-    // @include background-btn($primary, $pink);
+@mixin background-btn($primary, $secondary) {
+    background: linear-gradient($secondary, $primary);
+    // @include background-btn($primary, $secondary);
 }
 
 @mixin fit-desktop-index {
@@ -39,11 +39,11 @@
     //@include font-no-initial-margin;
 }
 
-@mixin font-gradiant($primary, $pink) {
-    background: -webkit-linear-gradient($primary, $pink);
+@mixin font-gradiant($primary, $secondary) {
+    background: -webkit-linear-gradient($primary, $secondary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // @include font-gradiant($primary, $pink); 
+    // @include font-gradiant($primary, $secondary); 
 }
 
 @mixin form-no-border {
@@ -60,4 +60,14 @@
     grid-template-rows: 200px 200px;
     gap: 30px;
     //@include grid-cartes;
+}
+
+@mixin litle-transition {
+    transition: all 200ms;
+    //@include litle-transition;
+}
+
+@mixin litle-shadow-box {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+    //@include litle-shadow-box;
 }

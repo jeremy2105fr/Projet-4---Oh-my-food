@@ -1,3 +1,4 @@
+// Footer en commun sur l'ensemble du projet, seul le footer de l'index-footer possède une animation
 footer {
     background-color: $gray;
     color: $white;
@@ -76,4 +77,9 @@ footer {
             }
         }
     }
+}
+
+// animation du Footer de la page index 
+.footer-index {
+    @include index-when-loading;
 }

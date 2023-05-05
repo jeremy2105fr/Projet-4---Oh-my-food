@@ -3,6 +3,7 @@
     z-index: 2;
     width: $max-width;
     background-color: $white;
+    @include index-when-loading;
 
     nav {
         height: 63px;

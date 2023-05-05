@@ -1,5 +1,6 @@
 .main-index {
     padding-top: 63px;
+    @include index-when-loading;
 
     // Blocs Localisation et Exploration 
     .localisation-exploration {
@@ -9,7 +10,7 @@
             width: $max-width;
             height: 50px;
             @include flex-center;
-            background-color: $gray-two;
+            background-color: $localisation-background;
 
             form {
                 @include flex-just-align-center;
@@ -30,8 +31,9 @@
                     font-size: larger;
 
                     &:hover {
+                        @include litle-transition;
                         cursor: pointer;
-                        @include font-gradiant($primary, $pink);
+                        @include font-gradiant($primary, $secondary);
                     }
                 }
 
@@ -85,13 +87,14 @@
                 margin-top: 10px;
                 @include flex-center;
                 border-radius: 55px;
-                @include background-btn($primary, $pink);
+                @include background-btn($primary, $secondary);
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
                 color: $white;
                 font-weight: bold;
                 text-decoration: none;
 
                 &:hover {
+                    @include litle-transition;
                     filter: brightness(120%);
                     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
                     cursor: pointer;
@@ -139,8 +142,14 @@
                 font-size: 15px;
                 color: $black;
 
-                &:hover i {
-                    color: $primary;
+                &:hover {
+                    @include litle-transition;
+                    @include litle-shadow-box;
+
+                    i {
+                        @include litle-transition;
+                        color: $primary;
+                    }
                 }
 
                 i {
@@ -279,7 +288,7 @@
                     }
 
                     .nouveau {
-                        background-color: $new-green;
+                        background-color: $new-box-background;
                         text-align: center;
                         height: 19px;
                         width: 75px;
@@ -291,7 +300,7 @@
 
                         p {
                             @include font-no-initial-margin;
-                            color: $green-font;
+                            color: $new-box-font;
                             font-weight: bold;
                         }
                     }
@@ -346,26 +355,28 @@
                             }
 
                             .plein {
-
                                 visibility: hidden;
                             }
                         }
 
                         &:active .base {
+                            transition: all 0.3s;
                             visibility: hidden;
                         }
 
                         &:active .plein {
                             color: $primary;
-                            @include font-gradiant($primary, $pink);
+                            @include font-gradiant($primary, $secondary);
                             visibility: visible;
+                            @include show-full-heart;
                         }
 
                     }
                 }
 
                 &:hover {
-                    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+                    @include litle-transition;
+                    @include litle-shadow-box;
                 }
             }
         }

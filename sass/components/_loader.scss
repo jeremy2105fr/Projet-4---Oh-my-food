@@ -15,10 +15,10 @@
         text-align: center;
         font-family: "Shrikhand", cursive;
         font-size: 10vh;
-        @include font-gradiant($primary, $pink);
+        @include font-gradiant($primary, $secondary);
 
-        @media screen and (min-width: 375px) and (max-width: 768px) {
-            font-size: 50px;
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            font-size: 45px;
         }
     }
 
@@ -26,7 +26,7 @@
     .loader {
         border: 5px solid $white;
         border-top: 5px solid $primary;
-        border-bottom: 5px solid $pink;
+        border-bottom: 5px solid $secondary;
         border-radius: 50%;
         width: 90px;
         height: 90px;

@@ -1,6 +1,11 @@
 @mixin loader-hide {
-    animation: loader-hide 2s; // Animation de la "disparition" du chargement
+    animation: loader-hide 2.5s; // Animation de la "disparition" du chargement
     //@include loader-hide;
+}
+
+@mixin index-when-loading {
+    animation: index-when-loading 2s;
+    //@include index-when-loading;
 }
 
 @mixin rotation {
@@ -8,12 +13,12 @@
     //@include rotation;
 }
 
+@mixin show-full-heart {
+    animation: show-full-heart 0.4s ease-out;
+    //@include show-full-heart;
+}
+
 @mixin apparition {
     animation: apparition 0.28s ease-in-out;
     //@include apparition;
-}
-
-@mixin look-me {
-    animation: look-me 5s infinite;
-    //@include look-me;
 }
