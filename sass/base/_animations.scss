@@ -56,16 +56,6 @@
     }
 }
 
-//Animations des pages restaurants
-@keyframes apparition {
-
-    //Déroule les cartes du restaurant
-    0% {
-        opacity: 0.8;
-        height: 10px;
-    }
-}
-
 @keyframes introduction-menu {
     0% {
         margin-left: 300px;

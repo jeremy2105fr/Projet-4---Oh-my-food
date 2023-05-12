@@ -17,8 +17,3 @@
     animation: show-full-heart 0.4s ease-out;
     //@include show-full-heart;
 }
-
-@mixin apparition {
-    animation: apparition 0.28s ease-in-out;
-    //@include apparition;
-}
