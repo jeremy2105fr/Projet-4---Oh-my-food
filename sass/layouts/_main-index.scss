@@ -338,12 +338,11 @@
                             position: absolute;
                             right: 20px;
                             margin-top: 10px;
-
+                            transition: all 0.3s reverse ease-in-out;
 
                             .fa {
                                 width: 22px;
                                 height: 21px;
-
                                 font-size: 20px;
                                 position: absolute;
                                 -webkit-text-stroke-width: 1px;
@@ -356,21 +355,22 @@
 
                             .plein {
                                 visibility: hidden;
+                                color: $primary;
+                                @include font-gradiant($primary, $secondary);
+                                @include full-heart;
                             }
-                        }
 
-                        &:active .base {
-                            transition: all 0.3s;
-                            visibility: hidden;
-                        }
+                            &:hover .base {
+                                transition: all 0.3s;
+                                visibility: hidden;
+                            }
 
-                        &:active .plein {
-                            color: $primary;
-                            @include font-gradiant($primary, $secondary);
-                            visibility: visible;
-                            @include show-full-heart;
-                        }
+                            &:hover .plein {
+                                visibility: visible;
+                                @include show-full-heart;
+                            }
 
+                        }
                     }
                 }
 

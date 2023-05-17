@@ -1,19 +1,33 @@
+// Définition des mixins pour les animations
+// Gère l'animation de la "disparition" du chargement
 @mixin loader-hide {
     animation: loader-hide 2.5s; // Animation de la "disparition" du chargement
     //@include loader-hide;
 }
 
+// Gère l'animation de l'index quand la page charge
 @mixin index-when-loading {
     animation: index-when-loading 2s;
     //@include index-when-loading;
 }
 
+// Gère la roue de chargement de la page index
 @mixin rotation {
     animation: rotation 2s; // Animation de la rotation de la "roue"
     //@include rotation;
 }
 
+// Gère animation des coeurs index et restaurants
+// Animation du coeur plein avant le hover
+@mixin full-heart {
+    transform: scale(0.1);
+    transition: all 0.3s ease-out;
+    transition-duration: 0.4s;
+    //@include full-heart;
+}
+
+// Animation du coeur plein pendant le hover
 @mixin show-full-heart {
-    animation: show-full-heart 0.4s ease-out;
+    transform: scale(1);
     //@include show-full-heart;
 }

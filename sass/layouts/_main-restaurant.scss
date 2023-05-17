@@ -55,20 +55,21 @@
 
                 .plein {
                     visibility: hidden;
+                    color: $primary;
+                    @include font-gradiant($primary, $secondary);
+                    @include full-heart;
                 }
 
                 &:hover {
                     cursor: pointer;
                 }
 
-                &:active .base {
+                &:hover .base {
                     transition: all 0.3s;
                     visibility: hidden;
                 }
 
-                &:active .plein {
-                    color: $primary;
-                    @include font-gradiant($primary, $secondary);
+                &:hover .plein {
                     visibility: visible;
                     @include show-full-heart;
                 }

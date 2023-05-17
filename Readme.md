@@ -1,5 +1,3 @@
-Lien vers github : https://github.com/jeremy2105fr/Projet-4---Oh-my-food
-
 - Le dossier asset contient:
 
   - le dossier css et son fichier css avec style.css (met en style la pages index + restaurants).
